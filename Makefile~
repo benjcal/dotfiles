@@ -28,6 +28,7 @@ make_dirs :
 update_dotfiles : $(CONFIG_DIR)/nvim
 	cp -r $(CONFIG_DIR)/nvim/init.vim nvim/init.vim
 	cp ~/.zshrc zsh/zshrc
+	cp ~/.tmux.conf tmux/tmux.conf
 	git add .
 	git commit -m "Dotfiles updated"
 
@@ -39,3 +40,7 @@ install_antigen :
 
 install_zsh_config : 
 	cp zsh/zshrc ~/.zshrc
+	cp zsh/zshenv ~/.zshenv
+
+install_tmux_config :
+	cp tmux/tmux.conf ~/.tmux.conf

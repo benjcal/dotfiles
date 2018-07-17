@@ -51,3 +51,6 @@ alias gc="git commit"
 alias gp="git push"
 alias vim="nvim"
 
+#----- PATH -----#
+export PATH=~/.bin:$PATH
+
