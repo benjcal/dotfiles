@@ -6,10 +6,10 @@ DEIN_DIR := $(CONFIG_DIR)/dein
 DEIN_INSTALL_URL := "https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh"
 TMP := /tmp
 
-all : check_bins make_dirs install_dein install_vim_config install_antigen install_zsh_config
+all : check_bins make_dirs install_dein install_vim_config
 
 check_bins :
-	@type nvim zsh
+	@type nvim
 
 install_dein : 
 	if test -d $(DEIN_DIR); \
@@ -26,7 +26,6 @@ make_dirs :
 
 update_dotfiles : $(CONFIG_DIR)/nvim
 	cp -r $(CONFIG_DIR)/nvim/init.vim nvim/init.vim
-	cp ~/.zshrc zsh/zshrc
 	git add .
 	git commit -m "Dotfiles updated"
 
