@@ -39,3 +39,4 @@ install_antigen :
 
 install_zsh_config : 
 	cp zsh/zshrc ~/.zshrc
+	cp zsh/zshenv ~/.zshenv

@@ -5,6 +5,7 @@ CONFIG_DIR := ~/.config
 DEIN_DIR := $(CONFIG_DIR)/dein
 DEIN_INSTALL_URL := "https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh"
 TMP := /tmp
+MAKEFLAGS += --silent
 
 all : check_bins make_dirs install_dein install_vim_config install_antigen install_zsh_config
 
