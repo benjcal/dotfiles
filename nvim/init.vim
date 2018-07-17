@@ -15,8 +15,11 @@ if dein#load_state('~/.config/dein')
   call dein#add('~/.config/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('terryma/vim-multiple-cursors')
+  call dein#add('raimondi/delimitmate')
+  call dein#add('bling/vim-bufferline')
 
   " Required:
   call dein#end()
@@ -34,6 +37,9 @@ endif
 
 "End dein Scripts-------------------------
 
+" Color
+colorscheme delek
+
 set backspace=indent,eol,start
 set autoindent
 set backup
@@ -44,3 +50,12 @@ set incsearch
 syntax on
 set hlsearch
 filetype plugin indent on
+
+let g:bufferline_echo = 0
+autocmd VimEnter *
+\ let &statusline='%{bufferline#refresh_status()}'
+\ .bufferline#get_status_string()
+
+set hidden
+set confirm
+set number
