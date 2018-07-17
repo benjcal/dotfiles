@@ -51,6 +51,5 @@ alias gc="git commit"
 alias gp="git push"
 alias vim="nvim"
 
-#----- PATH -----#
-export PATH=~/.bin:$PATH
+export BLOX_SEG__UPPER_RIGHT=(bgjobs)
 
