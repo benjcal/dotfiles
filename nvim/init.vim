@@ -43,7 +43,7 @@ colorscheme delek
 set backspace=indent,eol,start
 set autoindent
 set backup
-set backupdir=~/.config/nvim
+set backupdir=~/.backup
 set history=50
 set ruler
 set showcmd
