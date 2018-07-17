@@ -31,7 +31,10 @@ update_dotfiles : $(CONFIG_DIR)/nvim
 	git commit -m "Dotfiles updated"
 
 install_antigen :
-	curl -L git.io/antigen > ~/.antigen.zsh
+	if test -f ~/.antigen.zsh; \
+		then echo "antigen is installed"; \
+		else curl -L git.io/antigen > ~/.antigen.zsh; \
+	fi
 
 install_zsh_config : 
 	cp zsh/zshrc ~/.zshrc
