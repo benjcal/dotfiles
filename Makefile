@@ -7,30 +7,25 @@ DEIN_INSTALL_URL := "https://raw.githubusercontent.com/Shougo/dein.vim/master/bi
 TMP := /tmp
 MAKEFLAGS += --silent
 
-all : check_bins make_dirs install_dein install_vim_config install_antigen install_zsh_config
+all : 	check_bins \
+	install_dein \
+	install_vim_config \
+	install_antigen \
+	install_zsh_config \
+	install_tmux_config
 
 check_bins :
-	@type nvim zsh
+	@type nvim zsh tmux
 
 install_dein : 
 	if test -d $(DEIN_DIR); \
-		then echo "dein.vim is installed"; \
-		else curl $(DEIN_INSTALL_URL) > $(TMP)/dein_inst.sh; \
-			 sh $(TMP)/dein_inst.sh $(DEIN_DIR); \
+	then echo "dein.vim is installed"; \
+	else curl $(DEIN_INSTALL_URL) > $(TMP)/dein_inst.sh; \
+	sh $(TMP)/dein_inst.sh $(DEIN_DIR); \
 	fi
 
 install_vim_config : $(CONFIG_DIR)/nvim
-	cp -r nvim $(CONFIG_DIR)
-
-make_dirs : 
-	mkdir -p $(CONFIG_DIR)
-
-update_dotfiles : $(CONFIG_DIR)/nvim ~/.zshrc ~/.tmux.conf
-	cp -r $(CONFIG_DIR)/nvim/init.vim nvim/init.vim
-	cp ~/.zshrc zsh/zshrc
-	cp ~/.tmux.conf tmux/tmux.conf
-	git add .
-	git commit -m "Dotfiles updated"
+	cp -ir nvim $(CONFIG_DIR)
 
 install_antigen :
 	if test -f ~/.antigen.zsh; \
@@ -39,8 +34,15 @@ install_antigen :
 	fi
 
 install_zsh_config : 
-	cp zsh/zshrc ~/.zshrc
-	cp zsh/zshenv ~/.zshenv
+	cp -i zsh/zshrc ~/.zshrc
+	cp -i zsh/zshenv ~/.zshenv
 
 install_tmux_config :
-	cp tmux/tmux.conf ~/.tmux.conf
+	cp -i tmux/tmux.conf ~/.tmux.conf
+
+update_dotfiles : $(CONFIG_DIR)/nvim ~/.zshrc ~/.tmux.conf
+	cp -r $(CONFIG_DIR)/nvim/init.vim nvim/init.vim
+	cp ~/.zshrc zsh/zshrc
+	cp ~/.tmux.conf tmux/tmux.conf
+	git add .
+	git commit -m "Dotfiles updated"
