@@ -1,13 +1,13 @@
 #Benj Dotfiles Makefile
 
-SHELL := /bin/bash
+SHELL = /bin/bash
 MAKEFLAGS += --silent
 
 CONFIG_DIR := ~/.config
 TMP := /tmp
 
 DEIN_DIR := $(CONFIG_DIR)/dein
-DEIN_INSTALL_URL := "https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh"
+DEIN_INSTALL_URL = "https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh"
 
 
 all : 	check_bins \
