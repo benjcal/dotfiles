@@ -19,10 +19,11 @@ if dein#load_state('~/.config/dein')
   call dein#add('tpope/vim-commentary')
   call dein#add('terryma/vim-multiple-cursors')
   call dein#add('raimondi/delimitmate')
-  call dein#add('bling/vim-bufferline')
   call dein#add('tpope/vim-tbone')
+  call dein#add('Valloric/YouCompleteMe')
+  call dein#add('mkitt/tabline.vim')
 
-  " Required:
+" Required:
   call dein#end()
   call dein#save_state()
 endif
@@ -39,7 +40,7 @@ endif
 "End dein Scripts-------------------------
 
 " Color
-colorscheme delek
+colorscheme slate
 
 set backspace=indent,eol,start
 set autoindent
@@ -53,13 +54,18 @@ syntax on
 set hlsearch
 filetype plugin indent on
 
-let g:bufferline_echo = 0
-autocmd VimEnter *
-\ let &statusline='%{bufferline#refresh_status()}'
-\ .bufferline#get_status_string()
-
 set hidden
 set confirm
 set number
+set relativenumber
 
 set foldmethod=marker
+
+nnoremap <leader>n :tabNext<CR>
+nnoremap <leader>N :tabnew<CR>
+set encoding=utf-8
+
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=3
+let g:netrw_winsize=25

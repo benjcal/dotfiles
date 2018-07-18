@@ -1,2 +1,2 @@
-export PATH=~/.bin:$PATH
-export PATH=~/.cargo/bin
+export PATH=~/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
