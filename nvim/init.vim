@@ -20,6 +20,7 @@ if dein#load_state('~/.config/dein')
   call dein#add('terryma/vim-multiple-cursors')
   call dein#add('raimondi/delimitmate')
   call dein#add('bling/vim-bufferline')
+  call dein#add('tpope/vim-tbone')
 
   " Required:
   call dein#end()
@@ -60,3 +61,5 @@ autocmd VimEnter *
 set hidden
 set confirm
 set number
+
+set foldmethod=marker

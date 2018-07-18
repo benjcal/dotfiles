@@ -49,7 +49,9 @@ alias pacman="pacman --color auto"
 alias gia="git add"
 alias gc="git commit"
 alias gp="git push"
+
 alias vim="nvim"
+alias subl="subl3"
 
 export BLOX_SEG__UPPER_RIGHT=(bgjobs)
 
