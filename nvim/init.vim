@@ -20,7 +20,6 @@ if dein#load_state('~/.config/dein')
   call dein#add('terryma/vim-multiple-cursors')
   call dein#add('raimondi/delimitmate')
   call dein#add('tpope/vim-tbone')
-  call dein#add('Valloric/YouCompleteMe')
   call dein#add('mkitt/tabline.vim')
 
 " Required:
