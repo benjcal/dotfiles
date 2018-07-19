@@ -1,3 +1,5 @@
+if [ -z "$TMUX" ]; then tmux; fi
+
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
@@ -53,5 +55,6 @@ alias gp="git push"
 alias vim="nvim"
 alias subl="subl3"
 
+# theme config
 export BLOX_SEG__UPPER_RIGHT=(bgjobs)
 
